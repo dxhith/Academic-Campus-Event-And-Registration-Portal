@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CampusSync — Event & Registration Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">C</span>
+        <span class="logo-text">Campus<strong>Sync</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="register.html" class="btn-nav">Sign Up Free</a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="register.html">Register</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-orb orb1"></div>
+      <div class="hero-orb orb2"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-badge">🎓 2025–26 Academic Year</div>
+      <h1 class="hero-title">
+        Discover. <em>Register.</em><br>Experience Campus Life.
+      </h1>
+      <p class="hero-sub">The central hub for every lecture, workshop, seminar, cultural fest, and hackathon happening at your university — all in one beautifully organized portal.</p>
+      <div class="hero-cta">
+        <a href="events.html" class="btn-primary">Explore Events</a>
+        <a href="register.html" class="btn-ghost">Create Account →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">240+</span><span class="stat-label">Events This Semester</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">18K</span><span class="stat-label">Students Registered</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">52</span><span class="stat-label">Active Clubs</span></div>
+      </div>
+    </div>
+    <div class="hero-cards-float">
+      <div class="float-card fc1">
+        <span class="fc-dot green"></span>
+        <div>
+          <p class="fc-title">AI & Society Symposium</p>
+          <p class="fc-meta">Tomorrow · Auditorium A</p>
+        </div>
+      </div>
+      <div class="float-card fc2">
+        <span class="fc-dot amber"></span>
+        <div>
+          <p class="fc-title">Annual Cultural Fest</p>
+          <p class="fc-meta">Mar 28 · Open Grounds</p>
+        </div>
+      </div>
+      <div class="float-card fc3">
+        <span class="fc-dot blue"></span>
+        <div>
+          <p class="fc-title">72-hr Hackathon</p>
+          <p class="fc-meta">Apr 5 · Innovation Hub</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Browse By Type</p>
+        <h2 class="section-title">Every Kind of Campus Experience</h2>
+      </div>
+      <div class="cat-grid">
+        <a href="events.html?cat=academic" class="cat-card">
+          <div class="cat-icon">📚</div>
+          <h3>Academic</h3>
+          <p>Seminars, guest lectures & research colloquia</p>
+          <span class="cat-count">84 events</span>
+        </a>
+        <a href="events.html?cat=tech" class="cat-card featured">
+          <div class="cat-icon">💻</div>
+          <h3>Tech & Innovation</h3>
+          <p>Hackathons, coding contests & tech talks</p>
+          <span class="cat-count">62 events</span>
+        </a>
+        <a href="events.html?cat=cultural" class="cat-card">
+          <div class="cat-icon">🎭</div>
+          <h3>Cultural</h3>
+          <p>Fests, performances & art exhibitions</p>
+          <span class="cat-count">47 events</span>
+        </a>
+        <a href="events.html?cat=sports" class="cat-card">
+          <div class="cat-icon">🏆</div>
+          <h3>Sports</h3>
+          <p>Inter-college tournaments & fitness events</p>
+          <span class="cat-count">33 events</span>
+        </a>
+        <a href="events.html?cat=workshops" class="cat-card">
+          <div class="cat-icon">🔬</div>
+          <h3>Workshops</h3>
+          <p>Hands-on skill-building sessions</p>
+          <span class="cat-count">55 events</span>
+        </a>
+        <a href="events.html?cat=career" class="cat-card">
+          <div class="cat-icon">💼</div>
+          <h3>Career</h3>
+          <p>Placements, networking & industry visits</p>
+          <span class="cat-count">29 events</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED EVENTS -->
+  <section class="featured-events section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Don't Miss</p>
+        <h2 class="section-title">Upcoming Featured Events</h2>
+        <a href="events.html" class="section-link">View All →</a>
+      </div>
+      <div class="events-grid">
+
+        <div class="event-card large">
+          <div class="event-img" style="background: linear-gradient(135deg,#1a1a2e,#16213e);">
+            <span class="event-label tech">Tech</span>
+            <div class="event-img-icon">🤖</div>
+          </div>
+          <div class="event-body">
+            <p class="event-date">April 5–7, 2025</p>
+            <h3 class="event-name">NexaHack 2025 — 72-Hour Hackathon</h3>
+            <p class="event-desc">Build solutions for real-world problems. ₹3L prize pool. Open to all departments.</p>
+            <div class="event-meta">
+              <span>📍 Innovation Hub</span>
+              <span>👥 340 registered</span>
+            </div>
+            <a href="event-detail.html" class="btn-primary sm">Register Now</a>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-img" style="background: linear-gradient(135deg,#2d1b69,#11998e);">
+            <span class="event-label cultural">Cultural</span>
+            <div class="event-img-icon">🎭</div>
+          </div>
+          <div class="event-body">
+            <p class="event-date">March 28–30, 2025</p>
+            <h3 class="event-name">Utsav 2025 — Annual Cultural Festival</h3>
+            <p class="event-desc">Three days of music, dance, drama, and art from across the country.</p>
+            <div class="event-meta">
+              <span>📍 Open Grounds</span>
+              <span>👥 1200+</span>
+            </div>
+            <a href="event-detail.html" class="btn-outline sm">Register</a>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-img" style="background: linear-gradient(135deg,#134e5e,#71b280);">
+            <span class="event-label academic">Academic</span>
+            <div class="event-img-icon">🧠</div>
+          </div>
+          <div class="event-body">
+            <p class="event-date">March 25, 2025</p>
+            <h3 class="event-name">AI & Society Symposium</h3>
+            <p class="event-desc">Panel discussion featuring industry leaders and researchers on ethical AI.</p>
+            <div class="event-meta">
+              <span>📍 Auditorium A</span>
+              <span>👥 450 seats</span>
+            </div>
+            <a href="event-detail.html" class="btn-outline sm">Register</a>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-img" style="background: linear-gradient(135deg,#4b1248,#f10711);">
+            <span class="event-label sports">Sports</span>
+            <div class="event-img-icon">⚽</div>
+          </div>
+          <div class="event-body">
+            <p class="event-date">April 12–14, 2025</p>
+            <h3 class="event-name">Inter-College Sports Meet 2025</h3>
+            <p class="event-desc">Athletics, football, basketball, badminton and more across 3 days.</p>
+            <div class="event-meta">
+              <span>📍 Sports Complex</span>
+              <span>👥 600 athletes</span>
+            </div>
+            <a href="event-detail.html" class="btn-outline sm">Register</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works section">
+    <div class="container">
+      <div class="section-header centered">
+        <p class="section-tag">Simple Process</p>
+        <h2 class="section-title">Register in 3 Easy Steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Create Your Account</h3>
+          <p>Sign up with your university email in under 60 seconds. No paperwork.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Browse & Register</h3>
+          <p>Filter events by department, date, or type and register with a single click.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Attend & Earn</h3>
+          <p>Get your digital pass, attend events, and collect participation certificates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section">
+    <div class="container">
+      <div class="section-header centered">
+        <p class="section-tag">Student Voices</p>
+        <h2 class="section-title">Loved by the Campus Community</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"CampusSync made event discovery so effortless. I never miss anything now. The registration process is super clean."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:#6c63ff;">A</div>
+            <div>
+              <strong>Arjun Mehta</strong>
+              <span>CSE, 3rd Year</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"As an event organizer, the admin dashboard is phenomenal. We went from spreadsheets to a fully automated system overnight."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:#f97316;">P</div>
+            <div>
+              <strong>Priya Nair</strong>
+              <span>Cultural Committee Head</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★☆</div>
+          <p>"Finally a platform that understands students. The mobile experience is flawless and the notifications actually help me stay on track."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:#10b981;">S</div>
+            <div>
+              <strong>Sneha Rajan</strong>
+              <span>MBA, 1st Year</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner">
+        <h2>Ready to make the most of campus life?</h2>
+        <p>Join 18,000+ students already using CampusSync to stay connected, grow skills, and build memories.</p>
+        <a href="register.html" class="btn-primary lg">Get Started — It's Free</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">C</span>
+            <span class="logo-text">Campus<strong>Sync</strong></span>
+          </a>
+          <p>Unifying the campus experience — one event at a time.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Portal</h4>
+          <a href="events.html">Events</a>
+          <a href="register.html">Register</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="#">FAQs</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter / X</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 CampusSync. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

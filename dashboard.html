@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard — CampusSync</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">C</span>
+        <span class="logo-text">Campus<strong>Sync</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-user">
+        <div class="user-avatar">A</div>
+        <span>Arjun M.</span>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="register.html">Register</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="dashboard-layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-profile">
+        <div class="profile-avatar large">A</div>
+        <h3>Arjun Mehta</h3>
+        <p>CSE, 3rd Year</p>
+        <span class="profile-id">CS22B0045</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="snav-item active" onclick="showSection('overview',this)">
+          <span>📊</span> Overview
+        </a>
+        <a href="#" class="snav-item" onclick="showSection('my-events',this)">
+          <span>🎟️</span> My Events
+        </a>
+        <a href="#" class="snav-item" onclick="showSection('certificates',this)">
+          <span>🏅</span> Certificates
+        </a>
+        <a href="#" class="snav-item" onclick="showSection('saved',this)">
+          <span>🔖</span> Saved Events
+        </a>
+        <a href="#" class="snav-item" onclick="showSection('settings',this)">
+          <span>⚙️</span> Settings
+        </a>
+      </nav>
+      <a href="index.html" class="sidebar-logout">← Back to Portal</a>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="dash-main">
+
+      <!-- OVERVIEW -->
+      <div class="dash-section active" id="overview">
+        <div class="dash-header">
+          <div>
+            <h2>Good morning, Arjun! 👋</h2>
+            <p>Here's what's happening with your campus life.</p>
+          </div>
+          <a href="events.html" class="btn-primary sm">+ Find Events</a>
+        </div>
+
+        <div class="dash-stats">
+          <div class="ds-card">
+            <span class="ds-icon">🎟️</span>
+            <div>
+              <span class="ds-num">7</span>
+              <span class="ds-label">Events Registered</span>
+            </div>
+          </div>
+          <div class="ds-card">
+            <span class="ds-icon">✅</span>
+            <div>
+              <span class="ds-num">4</span>
+              <span class="ds-label">Events Attended</span>
+            </div>
+          </div>
+          <div class="ds-card">
+            <span class="ds-icon">🏅</span>
+            <div>
+              <span class="ds-num">3</span>
+              <span class="ds-label">Certificates Earned</span>
+            </div>
+          </div>
+          <div class="ds-card">
+            <span class="ds-icon">🔖</span>
+            <div>
+              <span class="ds-num">12</span>
+              <span class="ds-label">Saved Events</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-grid-2">
+          <!-- UPCOMING -->
+          <div class="dash-card">
+            <h3>Upcoming Events</h3>
+            <div class="upcoming-list">
+              <div class="upcoming-item">
+                <div class="ui-date" style="background:#6c63ff20;color:#6c63ff;">
+                  <span>05</span><small>APR</small>
+                </div>
+                <div class="ui-body">
+                  <p class="ui-name">NexaHack 2025</p>
+                  <p class="ui-meta">Innovation Hub · 9:00 AM</p>
+                </div>
+                <span class="ui-badge registered">Registered</span>
+              </div>
+              <div class="upcoming-item">
+                <div class="ui-date" style="background:#10b98120;color:#10b981;">
+                  <span>25</span><small>MAR</small>
+                </div>
+                <div class="ui-body">
+                  <p class="ui-name">AI & Society Symposium</p>
+                  <p class="ui-meta">Auditorium A · 10:00 AM</p>
+                </div>
+                <span class="ui-badge registered">Registered</span>
+              </div>
+              <div class="upcoming-item">
+                <div class="ui-date" style="background:#f9731620;color:#f97316;">
+                  <span>28</span><small>MAR</small>
+                </div>
+                <div class="ui-body">
+                  <p class="ui-name">Utsav 2025</p>
+                  <p class="ui-meta">Open Grounds · All Day</p>
+                </div>
+                <span class="ui-badge pending">Pending</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACTIVITY -->
+          <div class="dash-card">
+            <h3>Recent Activity</h3>
+            <div class="activity-list">
+              <div class="activity-item">
+                <span class="act-dot green"></span>
+                <p><strong>Registered</strong> for NexaHack 2025</p>
+                <span>2 days ago</span>
+              </div>
+              <div class="activity-item">
+                <span class="act-dot blue"></span>
+                <p><strong>Certificate earned</strong> — Python Bootcamp</p>
+                <span>1 week ago</span>
+              </div>
+              <div class="activity-item">
+                <span class="act-dot amber"></span>
+                <p><strong>Attended</strong> Design Thinking Workshop</p>
+                <span>2 weeks ago</span>
+              </div>
+              <div class="activity-item">
+                <span class="act-dot green"></span>
+                <p><strong>Registered</strong> for AI Symposium</p>
+                <span>3 weeks ago</span>
+              </div>
+              <div class="activity-item">
+                <span class="act-dot blue"></span>
+                <p><strong>Certificate earned</strong> — Blockchain 101</p>
+                <span>1 month ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RECOMMENDATIONS -->
+        <div class="dash-card wide">
+          <h3>Recommended For You</h3>
+          <div class="rec-grid">
+            <div class="rec-card">
+              <span class="event-label tech">Tech</span>
+              <h4>Cloud & DevOps Workshop</h4>
+              <p>Apr 29 · Computer Lab 4</p>
+              <a href="event-detail.html" class="btn-outline sm">View →</a>
+            </div>
+            <div class="rec-card">
+              <span class="event-label academic">Academic</span>
+              <h4>Research Paper Contest</h4>
+              <p>Apr 22 · Seminar Hall 2</p>
+              <a href="event-detail.html" class="btn-outline sm">View →</a>
+            </div>
+            <div class="rec-card">
+              <span class="event-label career">Career</span>
+              <h4>Campus Placement Fair</h4>
+              <p>Apr 18 · Convention Centre</p>
+              <a href="event-detail.html" class="btn-outline sm">View →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MY EVENTS -->
+      <div class="dash-section" id="my-events">
+        <div class="dash-header">
+          <h2>My Events</h2>
+          <a href="events.html" class="btn-primary sm">+ Register New</a>
+        </div>
+        <div class="tabs-inner">
+          <button class="inner-tab active" onclick="filterMyEvents('all',this)">All (7)</button>
+          <button class="inner-tab" onclick="filterMyEvents('upcoming',this)">Upcoming (3)</button>
+          <button class="inner-tab" onclick="filterMyEvents('attended',this)">Attended (4)</button>
+        </div>
+        <div class="my-events-list" id="myEventsList">
+          <div class="my-event-row" data-status="upcoming">
+            <div class="mer-color" style="background:#6c63ff;"></div>
+            <div class="mer-body">
+              <span class="event-label tech">Tech</span>
+              <h4>NexaHack 2025</h4>
+              <p>Apr 5–7 · Innovation Hub</p>
+            </div>
+            <span class="status-pill upcoming">Upcoming</span>
+            <button class="btn-ghost-sm" onclick="downloadPass()">📥 Pass</button>
+          </div>
+          <div class="my-event-row" data-status="upcoming">
+            <div class="mer-color" style="background:#10b981;"></div>
+            <div class="mer-body">
+              <span class="event-label academic">Academic</span>
+              <h4>AI & Society Symposium</h4>
+              <p>Mar 25 · Auditorium A</p>
+            </div>
+            <span class="status-pill upcoming">Upcoming</span>
+            <button class="btn-ghost-sm" onclick="downloadPass()">📥 Pass</button>
+          </div>
+          <div class="my-event-row" data-status="upcoming">
+            <div class="mer-color" style="background:#f97316;"></div>
+            <div class="mer-body">
+              <span class="event-label cultural">Cultural</span>
+              <h4>Utsav 2025</h4>
+              <p>Mar 28–30 · Open Grounds</p>
+            </div>
+            <span class="status-pill pending">Pending</span>
+            <button class="btn-ghost-sm" onclick="downloadPass()">📥 Pass</button>
+          </div>
+          <div class="my-event-row" data-status="attended">
+            <div class="mer-color" style="background:#8b5cf6;"></div>
+            <div class="mer-body">
+              <span class="event-label workshop">Workshop</span>
+              <h4>Design Thinking Bootcamp</h4>
+              <p>Mar 10 · Design Lab</p>
+            </div>
+            <span class="status-pill attended">Attended</span>
+            <button class="btn-ghost-sm" onclick="downloadCert()">🏅 Certificate</button>
+          </div>
+          <div class="my-event-row" data-status="attended">
+            <div class="mer-color" style="background:#6c63ff;"></div>
+            <div class="mer-body">
+              <span class="event-label tech">Tech</span>
+              <h4>Python Bootcamp</h4>
+              <p>Mar 1 · Computer Lab 2</p>
+            </div>
+            <span class="status-pill attended">Attended</span>
+            <button class="btn-ghost-sm" onclick="downloadCert()">🏅 Certificate</button>
+          </div>
+          <div class="my-event-row" data-status="attended">
+            <div class="mer-color" style="background:#06b6d4;"></div>
+            <div class="mer-body">
+              <span class="event-label tech">Tech</span>
+              <h4>Blockchain 101 Workshop</h4>
+              <p>Feb 20 · Seminar Hall 1</p>
+            </div>
+            <span class="status-pill attended">Attended</span>
+            <button class="btn-ghost-sm" onclick="downloadCert()">🏅 Certificate</button>
+          </div>
+          <div class="my-event-row" data-status="attended">
+            <div class="mer-color" style="background:#ef4444;"></div>
+            <div class="mer-body">
+              <span class="event-label sports">Sports</span>
+              <h4>Badminton Tournament</h4>
+              <p>Feb 12 · Sports Complex</p>
+            </div>
+            <span class="status-pill attended">Attended</span>
+            <span class="result-badge">🥈 Runner-up</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATES -->
+      <div class="dash-section" id="certificates">
+        <div class="dash-header">
+          <h2>My Certificates</h2>
+          <p class="dash-sub">3 certificates earned</p>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="cert-top" style="background: linear-gradient(135deg,#1a1a2e,#6c63ff);">
+              <div class="cert-ribbon">🏅</div>
+              <p>Certificate of Participation</p>
+              <h3>Python Bootcamp</h3>
+            </div>
+            <div class="cert-bottom">
+              <p>Issued: March 3, 2025</p>
+              <p>Organizer: CSE Department</p>
+              <button class="btn-outline sm" onclick="downloadCert()">⬇ Download</button>
+            </div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-top" style="background: linear-gradient(135deg,#134e5e,#71b280);">
+              <div class="cert-ribbon">🏅</div>
+              <p>Certificate of Participation</p>
+              <h3>Design Thinking Bootcamp</h3>
+            </div>
+            <div class="cert-bottom">
+              <p>Issued: March 12, 2025</p>
+              <p>Organizer: Innovation Cell</p>
+              <button class="btn-outline sm" onclick="downloadCert()">⬇ Download</button>
+            </div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-top" style="background: linear-gradient(135deg,#2d1b69,#11998e);">
+              <div class="cert-ribbon">🏅</div>
+              <p>Certificate of Participation</p>
+              <h3>Blockchain 101 Workshop</h3>
+            </div>
+            <div class="cert-bottom">
+              <p>Issued: February 22, 2025</p>
+              <p>Organizer: FinTech Club</p>
+              <button class="btn-outline sm" onclick="downloadCert()">⬇ Download</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SAVED -->
+      <div class="dash-section" id="saved">
+        <div class="dash-header">
+          <h2>Saved Events</h2>
+        </div>
+        <div class="saved-grid">
+          <div class="saved-card">
+            <span class="event-label career">Career</span>
+            <h4>Campus Placement Fair 2025</h4>
+            <p>Apr 18 · Convention Centre</p>
+            <div class="saved-actions">
+              <a href="event-detail.html" class="btn-primary sm">Register</a>
+              <button class="btn-ghost-sm" onclick="this.closest('.saved-card').remove()">🗑</button>
+            </div>
+          </div>
+          <div class="saved-card">
+            <span class="event-label tech">Tech</span>
+            <h4>Cloud & DevOps Workshop</h4>
+            <p>Apr 29 · Computer Lab 4</p>
+            <div class="saved-actions">
+              <a href="event-detail.html" class="btn-primary sm">Register</a>
+              <button class="btn-ghost-sm" onclick="this.closest('.saved-card').remove()">🗑</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="dash-section" id="settings">
+        <div class="dash-header">
+          <h2>Account Settings</h2>
+        </div>
+        <div class="settings-grid">
+          <div class="dash-card">
+            <h3>Personal Information</h3>
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" value="Arjun Mehta" />
+            </div>
+            <div class="form-group">
+              <label>University Email</label>
+              <input type="email" value="arjun@university.edu" readonly />
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="text" value="+91 98765 43210" />
+            </div>
+            <button class="btn-primary sm">Save Changes</button>
+          </div>
+          <div class="dash-card">
+            <h3>Notification Preferences</h3>
+            <div class="notif-row">
+              <div>
+                <p>Event Reminders</p>
+                <small>Get reminded 24hrs before an event</small>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="notif-row">
+              <div>
+                <p>New Event Alerts</p>
+                <small>Notify when new events match my interests</small>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="notif-row">
+              <div>
+                <p>Certificate Ready</p>
+                <small>Alert when my certificate is available</small>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="notif-row">
+              <div>
+                <p>Weekly Digest</p>
+                <small>Summary of upcoming events every Monday</small>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

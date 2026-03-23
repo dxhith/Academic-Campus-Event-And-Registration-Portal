@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register — CampusSync</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">C</span>
+        <span class="logo-text">Campus<strong>Sync</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="register.html" class="active">Register</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="register.html" class="btn-nav">Sign Up Free</a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="register.html">Register</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="auth-section">
+    <div class="auth-split">
+      <!-- LEFT PANEL -->
+      <div class="auth-left">
+        <div class="auth-left-inner">
+          <h2>Join CampusSync</h2>
+          <p>Create your free account and unlock access to every event, workshop, and opportunity on campus.</p>
+          <ul class="auth-perks">
+            <li>✓ Register for unlimited events</li>
+            <li>✓ Get digital passes & certificates</li>
+            <li>✓ Set event reminders</li>
+            <li>✓ Track your participation history</li>
+            <li>✓ Connect with fellow attendees</li>
+          </ul>
+          <div class="auth-quote">
+            <p>"CampusSync changed how I experience college. I discovered so many events I didn't even know existed!"</p>
+            <span>— Riya Sharma, ECE 2nd Year</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL — TABS -->
+      <div class="auth-right">
+        <div class="auth-tabs">
+          <button class="auth-tab active" onclick="switchTab('signup',this)">Sign Up</button>
+          <button class="auth-tab" onclick="switchTab('login',this)">Log In</button>
+        </div>
+
+        <!-- SIGN UP FORM -->
+        <div id="signupForm" class="auth-form active">
+          <h3>Create Account</h3>
+          <div class="form-row two-col">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Riya" />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Sharma" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>University Email</label>
+            <input type="email" placeholder="riya@university.edu" />
+            <span class="form-hint">Use your official .edu email address</span>
+          </div>
+          <div class="form-group">
+            <label>Student / Staff ID</label>
+            <input type="text" placeholder="e.g. CS22B0045" />
+          </div>
+          <div class="form-row two-col">
+            <div class="form-group">
+              <label>Department</label>
+              <select>
+                <option value="">Select Department</option>
+                <option>Computer Science & Engg.</option>
+                <option>Electronics & Communication</option>
+                <option>Mechanical Engineering</option>
+                <option>Civil Engineering</option>
+                <option>Business Administration</option>
+                <option>Arts & Humanities</option>
+                <option>Sciences</option>
+                <option>Law</option>
+                <option>Medicine</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Year of Study</label>
+              <select>
+                <option value="">Select Year</option>
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option>3rd Year</option>
+                <option>4th Year</option>
+                <option>Postgraduate</option>
+                <option>PhD</option>
+                <option>Faculty / Staff</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <div class="input-eye">
+              <input type="password" id="pw1" placeholder="Min. 8 characters" />
+              <button type="button" onclick="togglePw('pw1')">👁</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <div class="input-eye">
+              <input type="password" id="pw2" placeholder="Re-enter password" />
+              <button type="button" onclick="togglePw('pw2')">👁</button>
+            </div>
+          </div>
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="agreeTerms" />
+              <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+            </label>
+          </div>
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" checked />
+              <span>Send me email notifications about events I might like</span>
+            </label>
+          </div>
+          <button class="btn-primary full" onclick="handleSignup()">Create My Account →</button>
+          <p class="auth-switch">Already have an account? <a href="#" onclick="switchTab('login', document.querySelectorAll('.auth-tab')[1])">Log in here</a></p>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div id="loginForm" class="auth-form">
+          <h3>Welcome Back</h3>
+          <div class="form-group">
+            <label>University Email</label>
+            <input type="email" placeholder="your@university.edu" />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <div class="input-eye">
+              <input type="password" id="lpw" placeholder="Your password" />
+              <button type="button" onclick="togglePw('lpw')">👁</button>
+            </div>
+          </div>
+          <div class="form-row space-between">
+            <label class="checkbox-label small">
+              <input type="checkbox" /> Remember me
+            </label>
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+          <button class="btn-primary full" onclick="handleLogin()">Log In →</button>
+          <p class="auth-switch">New to CampusSync? <a href="#" onclick="switchTab('signup', document.querySelectorAll('.auth-tab')[0])">Create an account</a></p>
+        </div>
+
+        <!-- SUCCESS STATE -->
+        <div id="successState" class="auth-form success-state">
+          <div class="success-icon">🎉</div>
+          <h3>You're all set!</h3>
+          <p>Your CampusSync account has been created. Check your university email for a verification link.</p>
+          <a href="dashboard.html" class="btn-primary full">Go to Dashboard →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

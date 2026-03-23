@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — CampusSync</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">C</span>
+        <span class="logo-text">Campus<strong>Sync</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <a href="register.html" class="btn-nav">Sign Up Free</a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="register.html">Register</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-hero mini">
+    <div class="container">
+      <h1>Contact & Support</h1>
+      <p>Questions, feedback, or need help? We're here for you.</p>
+    </div>
+  </div>
+
+  <section class="contact-section section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- FORM -->
+        <div class="contact-form-wrap">
+          <h2>Send Us a Message</h2>
+          <p>We typically respond within 24 hours on working days.</p>
+          <div class="contact-form" id="contactForm">
+            <div class="form-row two-col">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" placeholder="Full Name" />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="your@email.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <select>
+                <option value="">Select a topic</option>
+                <option>Event Registration Help</option>
+                <option>Technical Issue</option>
+                <option>Suggest an Event</option>
+                <option>Organizer Inquiry</option>
+                <option>Account Support</option>
+                <option>Feedback / Suggestions</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea rows="5" placeholder="Describe your query in detail..."></textarea>
+            </div>
+            <button class="btn-primary" onclick="submitContact()">Send Message →</button>
+          </div>
+          <div id="contactSuccess" style="display:none;" class="form-success-msg">
+            <div>✅</div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+          </div>
+        </div>
+
+        <!-- INFO -->
+        <div class="contact-info">
+          <div class="ci-card">
+            <span class="ci-icon">📧</span>
+            <h4>Email Support</h4>
+            <a href="mailto:support@campussync.edu">support@campussync.edu</a>
+            <p>Mon–Fri, 9 AM–6 PM</p>
+          </div>
+          <div class="ci-card">
+            <span class="ci-icon">📞</span>
+            <h4>Phone Support</h4>
+            <a href="tel:+911234567890">+91 12345 67890</a>
+            <p>Mon–Fri, 10 AM–5 PM</p>
+          </div>
+          <div class="ci-card">
+            <span class="ci-icon">📍</span>
+            <h4>Office Location</h4>
+            <p>Student Affairs Building,<br>Room 204, Main Campus</p>
+          </div>
+          <div class="ci-card">
+            <span class="ci-icon">💬</span>
+            <h4>Quick Links</h4>
+            <a href="#">FAQs</a>
+            <a href="#">Report a Bug</a>
+            <a href="#">Suggest an Event</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How do I register for an event? <span>+</span>
+            </button>
+            <div class="faq-a">
+              Browse to the event you want, click "Register", and fill in your details. You'll receive a confirmation email with your digital pass.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Can I cancel my event registration? <span>+</span>
+            </button>
+            <div class="faq-a">
+              Yes, you can cancel up to 48 hours before the event from your Dashboard under "My Events". Cancellations after that window are not possible for events with limited seats.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How do I get my participation certificate? <span>+</span>
+            </button>
+            <div class="faq-a">
+              Certificates are issued within 72 hours of event completion and will appear in your Dashboard under "Certificates". You'll also receive an email notification.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              I'm an event organizer. How do I list my event? <span>+</span>
+            </button>
+            <div class="faq-a">
+              Email us at <a href="mailto:organizers@campussync.edu">organizers@campussync.edu</a> with your event details and your student body / department authorization letter. Our team will review and onboard you within 2 working days.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Is CampusSync available on mobile? <span>+</span>
+            </button>
+            <div class="faq-a">
+              The website is fully mobile-optimized. A dedicated mobile app for Android and iOS is currently in development and expected by mid-2025.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">C</span>
+            <span class="logo-text">Campus<strong>Sync</strong></span>
+          </a>
+          <p>Unifying the campus experience — one event at a time.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Portal</h4>
+          <a href="events.html">Events</a>
+          <a href="register.html">Register</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="#">FAQs</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter / X</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 CampusSync. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NexaHack 2025 — CampusSync</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">C</span>
+        <span class="logo-text">Campus<strong>Sync</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="register.html" class="btn-nav">Sign Up Free</a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="register.html">Register</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- EVENT HERO -->
+  <div class="event-detail-hero" style="background: linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);">
+    <div class="container">
+      <a href="events.html" class="back-link">← Back to Events</a>
+      <div class="edh-inner">
+        <div class="edh-left">
+          <span class="event-label tech lg">Tech</span>
+          <h1>NexaHack 2025</h1>
+          <p class="edh-tagline">72-Hour Innovation Hackathon — Build. Compete. Win.</p>
+          <div class="edh-meta">
+            <span>📅 April 5–7, 2025</span>
+            <span>📍 Innovation Hub, Campus</span>
+            <span>👥 340 / 500 registered</span>
+            <span>⏰ Closes Apr 1</span>
+          </div>
+        </div>
+        <div class="edh-right">
+          <div class="reg-box" id="regBox">
+            <div class="reg-seats">
+              <span>Seats Remaining</span>
+              <strong>160</strong>
+            </div>
+            <div class="reg-bar">
+              <div style="width:68%;"></div>
+            </div>
+            <p class="reg-note">68% filled — Register soon!</p>
+            <button class="btn-primary full lg" onclick="showEventRegForm()">Register for This Event</button>
+            <button class="btn-ghost full" onclick="saveEvent()">🔖 Save for Later</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT CONTENT -->
+  <section class="event-detail-body section">
+    <div class="container">
+      <div class="edb-layout">
+        <!-- MAIN CONTENT -->
+        <div class="edb-main">
+          <div class="edb-tabs">
+            <button class="edb-tab active" onclick="showEdbTab('about',this)">About</button>
+            <button class="edb-tab" onclick="showEdbTab('schedule',this)">Schedule</button>
+            <button class="edb-tab" onclick="showEdbTab('prizes',this)">Prizes</button>
+            <button class="edb-tab" onclick="showEdbTab('organizers',this)">Organizers</button>
+          </div>
+
+          <div id="about" class="edb-section active">
+            <h2>About the Event</h2>
+            <p>NexaHack 2025 is the flagship annual hackathon of the university, organized by the Innovation & Entrepreneurship Cell. Now in its 5th edition, this 72-hour marathon challenge invites students from all departments to form teams of 2–5 and build working prototypes for real-world problems.</p>
+            <p>This year's themes include <strong>AI for Social Good</strong>, <strong>Smart Cities</strong>, <strong>HealthTech</strong>, and <strong>EdTech</strong>. Teams will be mentored by industry professionals throughout the event.</p>
+            <h3>Who Can Participate?</h3>
+            <ul class="detail-list">
+              <li>Open to all undergraduate and postgraduate students</li>
+              <li>Teams of 2–5 members (cross-department encouraged)</li>
+              <li>No prior hackathon experience required</li>
+              <li>Must hold valid university ID</li>
+            </ul>
+            <h3>What to Bring</h3>
+            <ul class="detail-list">
+              <li>Laptop and charger</li>
+              <li>University ID card</li>
+              <li>Enthusiasm to build!</li>
+            </ul>
+            <p>Food, beverages, and workstations will be provided. The venue will be open 24/7 during the event duration.</p>
+          </div>
+
+          <div id="schedule" class="edb-section">
+            <h2>Event Schedule</h2>
+            <div class="schedule-list">
+              <div class="sched-day">
+                <h3>Day 1 — April 5, 2025</h3>
+                <div class="sched-item">
+                  <span class="sched-time">9:00 AM</span>
+                  <div><p>Registration & Check-in Opens</p><small>Innovation Hub Lobby</small></div>
+                </div>
+                <div class="sched-item">
+                  <span class="sched-time">10:30 AM</span>
+                  <div><p>Opening Ceremony & Problem Statement Release</p><small>Main Auditorium</small></div>
+                </div>
+                <div class="sched-item">
+                  <span class="sched-time">12:00 PM</span>
+                  <div><p>Hacking Begins!</p><small>All Labs</small></div>
+                </div>
+                <div class="sched-item">
+                  <span class="sched-time">3:00 PM</span>
+                  <div><p>Mentor Session Round 1</p><small>Breakout Rooms</small></div>
+                </div>
+                <div class="sched-item">
+                  <span class="sched-time">8:00 PM</span>
+                  <div><p>Dinner & Networking Night</p><small>Cafeteria</small></div>
+                </div>
+              </div>
+              <div class="sched-day">
+                <h3>Day 2 — April 6, 2025</h3>
+                <div class="sched-item">
+                  <span class="sched-time">9:00 AM</span>
+                  <div><p>Breakfast & Check-in</p></div>
+                </div>
+                <div class="sched-item">
+                  <span class="sched-time">11:00 AM</span>
+                  <div><p>Mentor Session Round 2</p></div>
+                </div>
+                <div class="sched-item">
+                  <span class="sched-time">4:00 PM</span>
+                  <div><p>Mid-Review Checkpoint</p><small>Optional submission of progress</small></div>
+                </div>
+              </div>
+              <div class="sched-day">
+                <h3>Day 3 — April 7, 2025</h3>
+                <div class="sched-item">
+                  <span class="sched-time">10:00 AM</span>
+                  <div><p>Final Submission Deadline</p></div>
+                </div>
+                <div class="sched-item">
+                  <span class="sched-time">11:00 AM</span>
+                  <div><p>Judging & Demos</p></div>
+                </div>
+                <div class="sched-item">
+                  <span class="sched-time">3:00 PM</span>
+                  <div><p>Closing Ceremony & Prize Distribution</p><small>Main Auditorium</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="prizes" class="edb-section">
+            <h2>Prizes & Awards</h2>
+            <div class="prizes-grid">
+              <div class="prize-card gold">
+                <div class="prize-icon">🥇</div>
+                <h3>1st Place</h3>
+                <p class="prize-amount">₹1,50,000</p>
+                <ul>
+                  <li>Cash prize</li>
+                  <li>Internship interviews at 5 top firms</li>
+                  <li>Incubation support</li>
+                  <li>Trophy & Certificates</li>
+                </ul>
+              </div>
+              <div class="prize-card silver">
+                <div class="prize-icon">🥈</div>
+                <h3>2nd Place</h3>
+                <p class="prize-amount">₹75,000</p>
+                <ul>
+                  <li>Cash prize</li>
+                  <li>Mentorship sessions</li>
+                  <li>Trophy & Certificates</li>
+                </ul>
+              </div>
+              <div class="prize-card bronze">
+                <div class="prize-icon">🥉</div>
+                <h3>3rd Place</h3>
+                <p class="prize-amount">₹30,000</p>
+                <ul>
+                  <li>Cash prize</li>
+                  <li>Certificates</li>
+                </ul>
+              </div>
+            </div>
+            <p class="prize-note">Special category prizes: Best AI Project (₹20,000), Best Social Impact (₹20,000), Best UI/UX (₹15,000). All participants receive digital participation certificates.</p>
+          </div>
+
+          <div id="organizers" class="edb-section">
+            <h2>Organized By</h2>
+            <div class="org-grid">
+              <div class="org-card">
+                <div class="org-avatar" style="background:#6c63ff;">I</div>
+                <h4>Innovation & Entrepreneurship Cell</h4>
+                <p>Primary Organizer</p>
+                <a href="mailto:iecell@university.edu">iecell@university.edu</a>
+              </div>
+              <div class="org-card">
+                <div class="org-avatar" style="background:#10b981;">C</div>
+                <h4>Computer Science Students Association</h4>
+                <p>Co-Organizer</p>
+                <a href="mailto:cssa@university.edu">cssa@university.edu</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STICKY SIDEBAR (desktop only shown via CSS) -->
+        <div class="edb-sidebar">
+          <div class="edb-info-card">
+            <h3>Quick Info</h3>
+            <div class="info-row"><span>📅 Date</span><strong>Apr 5–7, 2025</strong></div>
+            <div class="info-row"><span>⏰ Duration</span><strong>72 Hours</strong></div>
+            <div class="info-row"><span>📍 Venue</span><strong>Innovation Hub</strong></div>
+            <div class="info-row"><span>👥 Team Size</span><strong>2–5 members</strong></div>
+            <div class="info-row"><span>💰 Entry Fee</span><strong>Free</strong></div>
+            <div class="info-row"><span>🏆 Prize Pool</span><strong>₹3,00,000</strong></div>
+          </div>
+          <div class="edb-share">
+            <h4>Share Event</h4>
+            <div class="share-btns">
+              <button onclick="copyLink()" class="share-btn">🔗 Copy Link</button>
+              <button class="share-btn">📧 Email</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT REGISTRATION MODAL -->
+  <div class="modal-overlay" id="eventRegModal" onclick="closeModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="document.getElementById('eventRegModal').classList.remove('active')">✕</button>
+      <h2>Register for NexaHack 2025</h2>
+      <div id="modalForm">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Full Name" />
+        </div>
+        <div class="form-group">
+          <label>University Email</label>
+          <input type="email" placeholder="your@university.edu" />
+        </div>
+        <div class="form-group">
+          <label>Team Name</label>
+          <input type="text" placeholder="e.g. ByteBusters" />
+        </div>
+        <div class="form-group">
+          <label>Preferred Theme</label>
+          <select>
+            <option>AI for Social Good</option>
+            <option>Smart Cities</option>
+            <option>HealthTech</option>
+            <option>EdTech</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Dietary Preference</label>
+          <select>
+            <option>Vegetarian</option>
+            <option>Non-Vegetarian</option>
+            <option>Vegan</option>
+          </select>
+        </div>
+        <button class="btn-primary full" onclick="submitEventReg()">Confirm Registration →</button>
+      </div>
+      <div id="modalSuccess" style="display:none; text-align:center; padding:2rem 0;">
+        <div style="font-size:3rem;">🎉</div>
+        <h3>You're Registered!</h3>
+        <p>Check your email for confirmation and your digital pass.</p>
+        <a href="dashboard.html" class="btn-primary sm">Go to Dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">C</span>
+            <span class="logo-text">Campus<strong>Sync</strong></span>
+          </a>
+          <p>Unifying the campus experience — one event at a time.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Portal</h4>
+          <a href="events.html">Events</a>
+          <a href="register.html">Register</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="#">FAQs</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter / X</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 CampusSync. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

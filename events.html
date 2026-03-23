@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events — CampusSync</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">C</span>
+        <span class="logo-text">Campus<strong>Sync</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="register.html" class="btn-nav">Sign Up Free</a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="register.html">Register</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-hero mini">
+    <div class="container">
+      <h1>All Events</h1>
+      <p>Browse, filter and register for everything happening on campus.</p>
+    </div>
+  </div>
+
+  <section class="events-page section">
+    <div class="container">
+      <!-- FILTERS -->
+      <div class="filters-bar">
+        <div class="filter-search">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search events..." id="searchInput" onkeyup="filterEvents()" />
+        </div>
+        <div class="filter-chips">
+          <button class="chip active" onclick="setFilter('all',this)">All</button>
+          <button class="chip" onclick="setFilter('academic',this)">Academic</button>
+          <button class="chip" onclick="setFilter('tech',this)">Tech</button>
+          <button class="chip" onclick="setFilter('cultural',this)">Cultural</button>
+          <button class="chip" onclick="setFilter('sports',this)">Sports</button>
+          <button class="chip" onclick="setFilter('workshop',this)">Workshop</button>
+          <button class="chip" onclick="setFilter('career',this)">Career</button>
+        </div>
+        <select class="filter-select" onchange="sortEvents(this.value)">
+          <option value="date">Sort by Date</option>
+          <option value="name">Sort by Name</option>
+          <option value="popular">Most Popular</option>
+        </select>
+      </div>
+
+      <!-- EVENTS LIST -->
+      <div class="events-list" id="eventsList">
+
+        <div class="event-row" data-cat="tech">
+          <div class="er-date"><span class="er-day">05</span><span class="er-mon">APR</span></div>
+          <div class="er-color" style="background:#6c63ff;"></div>
+          <div class="er-body">
+            <div class="er-top">
+              <span class="event-label tech">Tech</span>
+              <span class="er-seats">340 / 500 seats</span>
+            </div>
+            <h3><a href="event-detail.html">NexaHack 2025 — 72-Hour Hackathon</a></h3>
+            <p>Build innovative solutions. Win from a ₹3L prize pool. Open to all departments.</p>
+            <div class="er-meta">
+              <span>📍 Innovation Hub</span>
+              <span>🕒 Apr 5–7, 2025</span>
+              <span>⏳ Registration closes Apr 1</span>
+            </div>
+          </div>
+          <div class="er-action">
+            <div class="er-seats-bar"><div style="width:68%"></div></div>
+            <a href="event-detail.html" class="btn-primary sm">Register</a>
+          </div>
+        </div>
+
+        <div class="event-row" data-cat="cultural">
+          <div class="er-date"><span class="er-day">28</span><span class="er-mon">MAR</span></div>
+          <div class="er-color" style="background:#f97316;"></div>
+          <div class="er-body">
+            <div class="er-top">
+              <span class="event-label cultural">Cultural</span>
+              <span class="er-seats">1200+ registered</span>
+            </div>
+            <h3><a href="event-detail.html">Utsav 2025 — Annual Cultural Festival</a></h3>
+            <p>Three days of music, dance, drama, and art from across the country. Food stalls, workshops, and more.</p>
+            <div class="er-meta">
+              <span>📍 Open Grounds</span>
+              <span>🕒 Mar 28–30, 2025</span>
+              <span>⏳ Open Entry</span>
+            </div>
+          </div>
+          <div class="er-action">
+            <div class="er-seats-bar"><div style="width:90%"></div></div>
+            <a href="event-detail.html" class="btn-outline sm">Register</a>
+          </div>
+        </div>
+
+        <div class="event-row" data-cat="academic">
+          <div class="er-date"><span class="er-day">25</span><span class="er-mon">MAR</span></div>
+          <div class="er-color" style="background:#10b981;"></div>
+          <div class="er-body">
+            <div class="er-top">
+              <span class="event-label academic">Academic</span>
+              <span class="er-seats">180 / 450 seats</span>
+            </div>
+            <h3><a href="event-detail.html">AI & Society Symposium</a></h3>
+            <p>Panel discussion featuring industry leaders and researchers on the ethical and social implications of AI.</p>
+            <div class="er-meta">
+              <span>📍 Auditorium A</span>
+              <span>🕒 Mar 25, 2025 · 10:00 AM</span>
+              <span>⏳ Closes Mar 23</span>
+            </div>
+          </div>
+          <div class="er-action">
+            <div class="er-seats-bar"><div style="width:40%"></div></div>
+            <a href="event-detail.html" class="btn-outline sm">Register</a>
+          </div>
+        </div>
+
+        <div class="event-row" data-cat="sports">
+          <div class="er-date"><span class="er-day">12</span><span class="er-mon">APR</span></div>
+          <div class="er-color" style="background:#ef4444;"></div>
+          <div class="er-body">
+            <div class="er-top">
+              <span class="event-label sports">Sports</span>
+              <span class="er-seats">420 / 600 athletes</span>
+            </div>
+            <h3><a href="event-detail.html">Inter-College Sports Meet 2025</a></h3>
+            <p>Athletics, football, basketball, badminton, chess and more. Medals and trophies for winners.</p>
+            <div class="er-meta">
+              <span>📍 Sports Complex</span>
+              <span>🕒 Apr 12–14, 2025</span>
+              <span>⏳ Closes Apr 8</span>
+            </div>
+          </div>
+          <div class="er-action">
+            <div class="er-seats-bar"><div style="width:70%"></div></div>
+            <a href="event-detail.html" class="btn-outline sm">Register</a>
+          </div>
+        </div>
+
+        <div class="event-row" data-cat="workshop">
+          <div class="er-date"><span class="er-day">01</span><span class="er-mon">APR</span></div>
+          <div class="er-color" style="background:#8b5cf6;"></div>
+          <div class="er-body">
+            <div class="er-top">
+              <span class="event-label workshop">Workshop</span>
+              <span class="er-seats">35 / 40 seats</span>
+            </div>
+            <h3><a href="event-detail.html">Design Thinking Bootcamp</a></h3>
+            <p>A full-day intensive workshop on human-centered design methodologies. Includes materials and lunch.</p>
+            <div class="er-meta">
+              <span>📍 Design Lab, Block C</span>
+              <span>🕒 Apr 1, 2025 · 9:00 AM</span>
+              <span>⏳ Almost full!</span>
+            </div>
+          </div>
+          <div class="er-action">
+            <div class="er-seats-bar almost-full"><div style="width:87%"></div></div>
+            <a href="event-detail.html" class="btn-primary sm">Register</a>
+          </div>
+        </div>
+
+        <div class="event-row" data-cat="career">
+          <div class="er-date"><span class="er-day">18</span><span class="er-mon">APR</span></div>
+          <div class="er-color" style="background:#f59e0b;"></div>
+          <div class="er-body">
+            <div class="er-top">
+              <span class="event-label career">Career</span>
+              <span class="er-seats">600 / 1000 seats</span>
+            </div>
+            <h3><a href="event-detail.html">Campus Placement Fair 2025</a></h3>
+            <p>Meet 80+ top companies. Carry your resume. On-spot interviews possible for select companies.</p>
+            <div class="er-meta">
+              <span>📍 Convention Centre</span>
+              <span>🕒 Apr 18, 2025 · 9AM–5PM</span>
+              <span>⏳ Closes Apr 15</span>
+            </div>
+          </div>
+          <div class="er-action">
+            <div class="er-seats-bar"><div style="width:60%"></div></div>
+            <a href="event-detail.html" class="btn-outline sm">Register</a>
+          </div>
+        </div>
+
+        <div class="event-row" data-cat="academic">
+          <div class="er-date"><span class="er-day">22</span><span class="er-mon">APR</span></div>
+          <div class="er-color" style="background:#06b6d4;"></div>
+          <div class="er-body">
+            <div class="er-top">
+              <span class="event-label academic">Academic</span>
+              <span class="er-seats">50 / 200 seats</span>
+            </div>
+            <h3><a href="event-detail.html">Research Paper Presentation Contest</a></h3>
+            <p>Present your research to a jury of professors and industry experts. Best papers win publication opportunities.</p>
+            <div class="er-meta">
+              <span>📍 Seminar Hall 2</span>
+              <span>🕒 Apr 22, 2025 · 11:00 AM</span>
+              <span>⏳ Submit abstract by Apr 10</span>
+            </div>
+          </div>
+          <div class="er-action">
+            <div class="er-seats-bar"><div style="width:25%"></div></div>
+            <a href="event-detail.html" class="btn-outline sm">Register</a>
+          </div>
+        </div>
+
+        <div class="event-row" data-cat="tech">
+          <div class="er-date"><span class="er-day">29</span><span class="er-mon">APR</span></div>
+          <div class="er-color" style="background:#6c63ff;"></div>
+          <div class="er-body">
+            <div class="er-top">
+              <span class="event-label tech">Tech</span>
+              <span class="er-seats">120 / 150 seats</span>
+            </div>
+            <h3><a href="event-detail.html">Cloud Computing & DevOps Workshop</a></h3>
+            <p>Hands-on session on AWS, Docker, and CI/CD pipelines. Industry-certified trainers.</p>
+            <div class="er-meta">
+              <span>📍 Computer Lab 4</span>
+              <span>🕒 Apr 29, 2025 · 9:30 AM</span>
+              <span>⏳ Closes Apr 25</span>
+            </div>
+          </div>
+          <div class="er-action">
+            <div class="er-seats-bar"><div style="width:80%"></div></div>
+            <a href="event-detail.html" class="btn-outline sm">Register</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- NO RESULTS -->
+      <div class="no-results" id="noResults" style="display:none;">
+        <span>🔍</span>
+        <p>No events found. Try a different search or filter.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">C</span>
+            <span class="logo-text">Campus<strong>Sync</strong></span>
+          </a>
+          <p>Unifying the campus experience — one event at a time.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Portal</h4>
+          <a href="events.html">Events</a>
+          <a href="register.html">Register</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="#">FAQs</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter / X</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 CampusSync. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
